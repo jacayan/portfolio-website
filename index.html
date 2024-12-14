@@ -50,12 +50,13 @@
             top: 0;
             width: 100%;
             z-index: 1030;
-            transition: none; /* Initially hidden */
         }
     </style>
 </head>
 <body>
 
+    <section id="home"><h1>Home</h1></section>
+    
     <!-- Navigation Bar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
@@ -75,7 +76,6 @@
     </nav>
 
     <!-- Sections -->
-    <section id="home"><h1>Home</h1></section>
     <section id="about"><h1>About Me</h1></section>
     <section id="skills"><h1>Skills</h1></section>
     <section id="projects"><h1>Projects</h1></section>
@@ -95,22 +95,6 @@
                     behavior: 'smooth'
                 });
             });
-        });
-    </script>
-
-    <script>
-        // JavaScript for navbar visibility
-        document.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const aboutSection = document.getElementById('about');
-            const aboutTop = aboutSection.offsetTop;
-            const scrollY = window.scrollY;
-
-            if (scrollY >= aboutTop) {
-                navbar.style.display = 'block'; // Show navbar when past the About section
-            } else {
-                navbar.style.display = 'none'; // Hide navbar when above the About section
-            }
         });
     </script>
 
