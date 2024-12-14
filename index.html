@@ -16,19 +16,27 @@
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
         section {
             min-height: 100vh; /* Makes each section fill the full screen */
             padding: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2rem;
         }
+
         #home { background: #f8f9fa; }
         #about { background: #e9ecef; }
         #skills { background: #dee2e6; }
         #projects { background: #ced4da; }
         #contact { background: #adb5bd; }
-        nav a {
+
+        nav a { /* Styling Navigation Links */
           margin-right: 15px;
           text-decoration: none;
           color: black;
@@ -36,14 +44,22 @@
         nav a:hover {
           text-decoration: underline;
         }
-      </style>
+
+        #navbar {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+            transition: none; /* Initially hidden */
+        }
+    </style>
 </head>
 <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">My Portfolio</a>
+            <a class="navbar-brand" href="#home">Home</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -79,6 +95,22 @@
                     behavior: 'smooth'
                 });
             });
+        });
+    </script>
+
+    <script>
+        // JavaScript for navbar visibility
+        document.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const aboutSection = document.getElementById('about');
+            const aboutTop = aboutSection.offsetTop;
+            const scrollY = window.scrollY;
+
+            if (scrollY >= aboutTop) {
+                navbar.style.display = 'block'; // Show navbar when past the About section
+            } else {
+                navbar.style.display = 'none'; // Hide navbar when above the About section
+            }
         });
     </script>
 
