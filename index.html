@@ -19,6 +19,8 @@
         body {
             margin: 0;
             padding: 0;
+            background: black;
+            color: #fff;
         }
 
         section {
@@ -30,11 +32,11 @@
             font-size: 2rem;
         }
 
-        #home { background: #f8f9fa; }
-        #about { background: #e9ecef; }
-        #skills { background: #dee2e6; }
-        #projects { background: #ced4da; }
-        #contact { background: #adb5bd; }
+        #home { background: transparent; }
+        #about { background: transparent; }
+        #skills { background: transparent; }
+        #projects { background: transparent; }
+        #contact { background: transparent; }
 
         nav a { /* Styling Navigation Links */
           margin-right: 15px;
@@ -51,10 +53,29 @@
             width: 100%;
             z-index: 1030;
         }
+
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Behind everything */
+        }
     </style>
 </head>
 <body>
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function() {
+          console.log('callback - particles.js config loaded');
+        });
+    </script>
+
+    <!-- Home Section ahead of Nav Bar -->
     <section id="home"><h1>Home</h1></section>
     
     <!-- Navigation Bar -->
@@ -75,7 +96,7 @@
         </div>
     </nav>
 
-    <!-- Sections -->
+    <!-- Other Sections -->
     <section id="about"><h1>About Me</h1></section>
     <section id="skills"><h1>Skills</h1></section>
     <section id="projects"><h1>Projects</h1></section>
