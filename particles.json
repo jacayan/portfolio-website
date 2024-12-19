@@ -46,7 +46,7 @@
         }
       },
       "line_linked": {
-        "enable": false,
+        "enable": true,
         "distance": 300,
         "color": "#ffffff",
         "opacity": 0.4,
@@ -71,7 +71,7 @@
       "detect_on": "canvas",
       "events": {
         "onhover": {
-          "enable": false,
+          "enable": true,
           "mode": "repulse"
         },
         "onclick": {
@@ -95,7 +95,7 @@
           "speed": 3
         },
         "repulse": {
-          "distance": 400,
+          "distance": 100,
           "duration": 0.4
         },
         "push": {
