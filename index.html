@@ -16,6 +16,14 @@
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: inherit;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -58,8 +66,24 @@
             z-index: -1;
         }
 
-        .container {
+        .home {
             position: relative;
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .canvas {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            z-index: 0;
             overflow: hidden;
         }
 
@@ -73,7 +97,10 @@
 
         .fuzzy-overlay {
             position: absolute;
-            inset: -200%;
+            top: -50%; /* Centering adjustment */
+            left: -50%; /* Centering adjustment */
+            width: 200%; /* Twice the width of the screen */
+            height: 200%; /* Twice the height of the screen */
             background-image: url("noise.png");
             opacity: 15%;
             z-index: 10;
@@ -97,15 +124,14 @@
     <div id="particles-js"></div>
 
     <!-- Home Section ahead of Nav Bar -->
-    <section id="home">
-        <div class="container">
-            <div class="content">
-                <h1>Home</h1>
-            </div>
-            
-            <div class="fuzzy-overlay"></div>
+    <div id="home" class="home">
+        <div class="canvas">
+            <canvas class="fuzzy-overlay"></canvas>
         </div>
-    </section>
+        <div class="content">
+            <h1>Home</h1>
+        </div>
+    </div>
     
     <!-- Navigation Bar -->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
