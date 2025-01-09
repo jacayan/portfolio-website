@@ -9,7 +9,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    font-family: 'Nintendoid1', monospace; /* Nintendoid font globally */
+    font-family: 'Press Start 2P', 'Nintendoid'; /* Nintendoid font globally */
   }
   
   header {
@@ -35,16 +35,18 @@ body {
   }
   
   section {
+    min-height: 100vh; /* Makes each section fill the full screen */
     margin: 20px;
-    padding: 10px;
+    padding: 50px;
+    display: block;
+    background: transparent;
   }
 
   #typedtext, h1 { 
-    font-size: 5em; 
-    padding: 1em;
-    font-family: Nintendoid1;
+    font-size: 3rem; 
+    padding: 6rem;
+    font-family: Nintendoid1, 'Press Start 2P';
     color: #eee;
-    font-size: 1em;
     line-height: 1;
     text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
     letter-spacing: 0.125em;
@@ -54,11 +56,64 @@ body {
     animation-direction: alternate;
   }
 
+  #typedtext{
+    font-size: 6rem;
+    overflow: hidden; /* Keep a clean display */
+  }
+
+  h1 {
+    margin-left: 5vw;
+    margin-top: 5vw;
+  }
+
+/* General Styling for the Contact Section */
+
+/* Styling for the Form */
+.contact-form {
+  margin: 2rem auto !important; /* Center the form */
+  text-align: left; /* Left-align form content */
+  width: 40%; /* Set width to 40% */
+  box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+/* Styling for Labels */
+.contact-form label {
+  margin-top: 1rem; /* Add space above labels */
+}
+
+/* Submit Button Styling */
+.submit-button {
+  margin-top: 1.5rem; /* Add space above the button */
+}
+
+
   @keyframes textflicker {
     from {
       text-shadow: 1px 0 0 #ea36af, -3px 0 0 #75fa69;
     }
     to {
       text-shadow: 3px 0.5px 2px #ea36af, 0px -0.5px 2px #75fa69;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    section {
+      margin: 0;
+    }
+    #typedtext{
+      font-size: 1.7rem;
+      padding: 1rem;
+      padding-top: 30%;
+      line-height: 3rem;
+    }
+    h1 {
+      font-size: 1.7rem;
+      padding: 0%;
+      padding-bottom: 1rem;
+      margin-top: 1vw;
+      text-align: center;
+    }
+    .contact-form {
+      width: 100%;
     }
   }

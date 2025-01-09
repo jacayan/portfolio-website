@@ -12,7 +12,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 var aText = new Array(
 "Hello, my name is Job.",
 "",
-"I am a passionate software developer."
+"I am a software developer."
 );
 var iSpeed = 100; // time delay of print out
 var iIndex = 0; // start printing array at this posision
@@ -44,5 +44,30 @@ function typewriter()
     setTimeout("typewriter()", iSpeed);
   }
 }
+
+document.querySelector('form').addEventListener('submit', function (event) {
+  event.preventDefault(); // Prevent form from refreshing the page
+
+  // Collect form data
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+
+  // Send email using EmailJS
+  emailjs.send("service_5vappvb", "template_5ds4ud9", {
+    name: name,
+    email: email,
+    message: message
+  }).then(
+    function (response) {
+      alert("Message sent successfully!");
+      document.querySelector('form').reset(); // Clear the form
+    },
+    function (error) {
+      alert("Failed to send message. Please try again later.");
+    }
+  );
+});
+
 
 typewriter();
