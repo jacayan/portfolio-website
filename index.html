@@ -15,6 +15,9 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Devicon icons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
 
     <!-- Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -119,28 +122,83 @@
         </div>
     </nav>
 
-    <!-- Other Sections -->
-    <section id="about"><h1>About Me</h1></section>
-    <section id="skills"><h1>Skills</h1></section>
+    <section id="about">
+        <h1>About Me</h1>
+        <div class="about-container">
+            <img src="assets/images/pxArt.png" alt="Pixel Art of Me" class="about-image">
+            <div class="nes-balloon from-left">
+                <p>
+                    With a Bachelor of Science in Computer Science from Rutgers University, I have a passion for all aspects of coding. 
+                    I enjoy working on a wide range of projects and continuously expanding my knowledge across different areas of software development. 
+                    Outside of coding, I spend my time playing video games, practicing the piano, and enjoying a game of pickleball. 
+                    Whether in coding, music, or other pursuits, I enjoy challenging myself, always striving to learn and improve.
+                </p>
+            </div>
+            <div class="mobile-balloon">
+                <p>
+                    With a Bachelor of Science in Computer Science from Rutgers University, I have a passion for all aspects of coding. 
+                    I enjoy working on a wide range of projects and continuously expanding my knowledge across different areas of software development. 
+                    Outside of coding, I spend my time playing video games, practicing the piano, and enjoying a game of pickleball. 
+                    Whether in coding, music, or other pursuits, I enjoy challenging myself, always striving to learn and improve.
+                </p>
+            </div>
+        </div>
+        <div class="cv-button-container">
+            <a href="assets/pdf/Job_Gacayan_Portfolio.pdf" download="Job_Gacayan_Portfolio.pdf">
+                <button class="nes-btn is-primary" style="font-size: 16px;">Download CV</button>
+            </a>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h1>Skills</h1>
+        <div class="skills-container">
+            <div class="skill-box">
+                <i class="devicon-java-plain"></i>
+                <p>Java</p>
+            </div>
+            <div class="skill-box">
+                <i class="devicon-python-plain"></i>
+                <p>Python</p>
+            </div>
+            <div class="skill-box">
+                <i class="devicon-c-plain"></i>
+                <p>C</p>
+            </div>
+            <div class="skill-box">
+                <i class="devicon-html5-plain"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-box">
+                <i class="devicon-css3-plain"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-box">
+                <i class="devicon-javascript-plain"></i>
+                <p>JavaScript</p>
+            </div>
+        </div>
+    </section>
+
     <section id="projects"><h1>Projects</h1></section>
     
     <section id="contact">
         <h1>Contact Me</h1>
         <form class="nes-container is-rounded contact-form">
             <!-- Name Input -->
-            <label for="name" class="nes-text is-success" style="margin-top: 0;">Name</label>
+            <label for="name" class="nes-text is-success" style="margin-top: 0; font-size: 16px;">Name</label>
             <input type="text" id="name" class="nes-input" placeholder="Enter your name" required>
             
             <!-- Email Input -->
-            <label for="email" class="nes-text is-success">Email</label>
+            <label for="email" class="nes-text is-success" style="font-size: 16px;">Email</label>
             <input type="email" id="email" class="nes-input" placeholder="Enter your email" required>
             
             <!-- Message Text Area -->
-            <label for="message" class="nes-text is-success">Message</label>
+            <label for="message" class="nes-text is-success" style="font-size: 16px;">Message</label>
             <textarea id="message" class="nes-textarea" placeholder="Write your message here" rows="5" required></textarea>
             
             <!-- Submit Button -->
-            <button type="submit" class="nes-btn is-primary">Submit</button>
+            <button type="submit" class="nes-btn is-primary" style="font-size: 16px;">Submit</button>
         </form>
     </section>
 
@@ -169,6 +227,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
 

@@ -35,7 +35,7 @@ body {
   }
   
   section {
-    min-height: 100vh; /* Makes each section fill the full screen */
+    min-height: auto;
     margin: 20px;
     padding: 50px;
     display: block;
@@ -57,13 +57,12 @@ body {
   }
 
   #typedtext{
-    font-size: 6rem;
+    font-size: 500%;
     overflow: hidden; /* Keep a clean display */
   }
 
   h1 {
     margin-left: 5vw;
-    margin-top: 5vw;
   }
 
 /* General Styling for the Contact Section */
@@ -86,6 +85,92 @@ body {
   margin-top: 1.5rem; /* Add space above the button */
 }
 
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem; /* Adjust spacing between image and text */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-image {
+  width: 20rem; /* Adjust size as needed */
+  height: auto;
+  flex-shrink: 0; /* Prevent image from shrinking */
+  align-self: flex-end; /* Align image to the top */
+}
+
+.nes-balloon {
+  color: black;
+  width: 100%; /* Allow the balloon to stretch */
+  max-width: 600px; /* Adjust max width to fit text */
+  min-height: 15rem; /* Keep a good height */
+  padding: 1.5rem; /* Adjust padding for better spacing */
+  flex-grow: 1; /* Let the balloon take up remaining space */
+}
+
+/* Regular container for smaller screens */
+.mobile-balloon {
+  display: none; /* Hide by default */
+  width: 100%;
+  max-width: 600px;
+  padding: 1.5rem;
+  background-color: #222;
+  color: white;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.cv-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem; /* Adjust spacing between about-container and button */
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap onto new lines */
+  justify-content: center; /* Centers items in the row */
+  gap: 2rem; /* Spacing between boxes */
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.skill-box {
+  background: #111;
+  color: white;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 1rem;
+  border: 3px solid #eee;
+  box-shadow: 4px 4px 0px #666;
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+  cursor: pointer;
+  width: calc(33.33% - 2rem); /* Ensures 3 boxes per row with gap */
+  max-width: 180px; /* Prevents overly wide boxes */
+  display: flex;
+  flex-direction: column; /* Aligns icon and text vertically */
+  align-items: center; /* Centers content inside */
+}
+
+.skill-box:hover {
+  animation: boxflicker 0.1s infinite alternate;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #ccc;
+}
+
+.skill-box i {
+  font-size: 90px;
+  margin-bottom: 10px;
+  image-rendering: pixelated;
+}
+
+.skill-box p {
+  margin-top: 1rem;
+  display: block;
+}
+
 
   @keyframes textflicker {
     from {
@@ -96,15 +181,35 @@ body {
     }
   }
 
+  @keyframes boxflicker {
+    from {
+        box-shadow: 1px 0 0 #ea36af, -3px 0 0 #75fa69;
+        text-shadow: 1px 0 0 #ea36af, -3px 0 0 #75fa69;
+    }
+    to {
+        box-shadow: 3px 0.5px 2px #ea36af, 0px -0.5px 2px #75fa69;
+        text-shadow: 3px 0.5px 2px #ea36af, 0px -0.5px 2px #75fa69;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     section {
       margin: 0;
     }
+    body {
+      font-size: 10px; /* Even smaller for very small screens */
+    }
     #typedtext{
       font-size: 1.7rem;
-      padding: 1rem;
-      padding-top: 30%;
+      padding: 0;
       line-height: 3rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content vertically */
+      height: 100vh; /* Ensures full-screen height */
+      margin: 0;
+      text-align: center;
     }
     h1 {
       font-size: 1.7rem;
@@ -115,5 +220,41 @@ body {
     }
     .contact-form {
       width: 100%;
+    }
+    .about-container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align */
+      text-align: center; /* Center text */
+    }
+    .about-image {
+      width: 16rem;
+      align-self: center;
+    }
+    .nes-balloon {
+      display: none;
+    }
+    .mobile-balloon {
+      display: block;
+      max-width: 90%; /* Make balloon stretch to fit */
+      min-height: auto; /* Allow height to adjust */
+    }
+    .skills-container {
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+  
+    .skill-box {
+      width: calc(50% - 1.5rem); /* 2 per row on smaller screens */
+      max-width: 120px;
+      padding: 0.8rem;
+    }
+  
+    .skill-box i {
+      font-size: 50px;
+    }
+  
+    .skill-box p {
+      font-size: 10px;
+      margin-top: 5px;
     }
   }
